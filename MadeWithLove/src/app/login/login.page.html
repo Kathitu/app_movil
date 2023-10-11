@@ -1,18 +1,18 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>Login</ion-title>
+  <ion-toolbar color="primary">
+    <ion-title>Iniciar sesión</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
 <ion-card>
   <ion-card-header>
-    <ion-card-title>Login</ion-card-title>
+    <ion-card-title>Que alegria verte de nuevo :) </ion-card-title>
   </ion-card-header>
   <ion-card-content>
     <form [formGroup]="formularioLogin">
       <ion-item>
-        <ion-label position="floating">Nombre</ion-label>
+        <ion-label position="floating">Usuario</ion-label>
         <ion-input formControlName="nombre"></ion-input>
       </ion-item>
     
@@ -29,7 +29,7 @@
 <ion-footer>
   <ion-toolbar color="primary">
     <ion-buttons slot="end">
-      <ion-button [routerLink]="['/register']">Registrarse</ion-button>
+      <ion-button [routerLink]="['/register']">¿No tiene una cuenta? Registrate aquí</ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-footer>
