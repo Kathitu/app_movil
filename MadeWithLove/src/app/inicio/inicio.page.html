@@ -1,20 +1,15 @@
 <ion-content [fullscreen]="true">
-  <div class="home-section">
-
-    <div class="title">
-      <h1>Made With Love</h1>
-      <!--Imagen icono-->
-      <p>Bienvenido.</p>
-      <p>¿Que es lo que te gustaria hacer? </p>
-    </div>
-
-    <div class="action-button">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Made With Love</ion-card-title>
+          <!--Imagen icono-->
+          <p>Bienvenido.</p>
+          <p>¿Que es lo que te gustaria hacer? </p>
+    </ion-card-header>
+    <ion-card-content>
       <ion-button [routerLink]="['/login']">Iniciar sesión</ion-button>
       <ion-button [routerLink]="['/register']">Registrarse</ion-button>
-    </div>
-    
-    <div class="description">
+    </ion-card-content>
+  </ion-card>
       <h6>[insertar descripción, proposito]</h6>
-    </div>
-  </div>
   </ion-content>
