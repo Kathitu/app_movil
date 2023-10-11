@@ -42,5 +42,8 @@ export class RegisterPage implements OnInit {
     }
 
     localStorage.setItem('usuario', JSON.stringify(usuario));
+
+    localStorage.setItem('ingresado', 'true');
+    this.navCtrl.navigateRoot('menu/home');
   }
 }
