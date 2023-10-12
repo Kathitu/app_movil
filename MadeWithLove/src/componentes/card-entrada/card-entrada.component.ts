@@ -28,5 +28,21 @@ export class CardEntradaComponent implements OnInit {
 
   guardar() {
     this.eventoGuardar.emit(this.entrada);
+
+    // Comprobar si 'entradas' existe en el localStorage
+    const entradasGuardadas: any[] = JSON.parse(localStorage.getItem('entradas') || '[]');
+    
+    const entradaIndex = entradasGuardadas.findIndex((e: any) => e.fecha === this.entrada.fecha);
+  
+    if (entradaIndex !== -1) {
+      entradasGuardadas[entradaIndex] = this.entrada;
+    } else {
+      entradasGuardadas.push(this.entrada);
+    }
+  
+    localStorage.setItem('entradas', JSON.stringify(entradasGuardadas));
   }
 }
+
+
+
