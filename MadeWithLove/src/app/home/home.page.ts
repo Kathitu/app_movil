@@ -34,7 +34,7 @@ export class HomePage implements OnInit {
   }
 
   cargarEntradas(){
-    var fecha = moment(this.fecha).format('MM-DD-YY');
+    var fecha = moment(this.fecha).format('DD-MM-YY');
 
     this.entradas = JSON.parse(localStorage.getItem('entradas') || '[]');
     if(this.entradas){
@@ -52,7 +52,7 @@ export class HomePage implements OnInit {
   }
 
   InicializarNuevaEntrada(){
-    var fecha = moment(this.fecha).format('MM-DD-YY');
+    var fecha = moment(this.fecha).format('DD-MM-YY');
     var dia = moment(this.fecha).format('DD');
     var mes = moment(this.fecha).format('MMMM');
     var year = moment(this.fecha).format('YYYY');
@@ -70,7 +70,7 @@ export class HomePage implements OnInit {
     texto: string
   }){
 
-    var fecha = moment(this.fecha).format('MM-DD-YY');
+    var fecha = moment(this.fecha).format('DD-MM-YY');
 
     if(this.entradas){
       var item = this.entradas.find((elemento)=>{
