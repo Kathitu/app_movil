@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavigationExtras, Router } from '@angular/router';
 import { NavController } from '@ionic/angular';
 
 @Component({
@@ -14,7 +15,7 @@ export class EntradasPage implements OnInit {
     texto: string
   }> = [];
 
-  constructor(private navCtrl: NavController) {
+  constructor(private router: Router) {
     this.cargarEntradas();
   }
 
@@ -23,6 +24,7 @@ export class EntradasPage implements OnInit {
 
   cargarEntradas(){
     this.entradas = JSON.parse(localStorage.getItem('entradas') || '[]');
+    if(!this.entradas)return;
     this.entradas.sort((item1, item2) => {
       if (item1.fecha < item2.fecha) return 1;
       if (item1.fecha > item2.fecha) return -1;
@@ -35,7 +37,12 @@ export class EntradasPage implements OnInit {
     fechaTexto: string,
     texto: string
   }) {
-    this.navCtrl.navigateForward('/detalle/' + entrada.fecha);
+    let datosNavegacion: NavigationExtras = {
+      state: {
+        entrada: entrada
+      }
+    }
+    this.router.navigate(['/entradas-detalle'], datosNavegacion);
   }
 }
 
