@@ -6,12 +6,11 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class NoIngresadoGuard implements CanActivate {
+export class NoIngresadoGuard implements CanActivate { //RoutingModule
 
   constructor(public navCtrl: NavController){
     
   }
-
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {

@@ -5,6 +5,11 @@ import { IngresadoGuard } from './ingresado.guard';
 
 const routes: Routes = [
   {
+    path: 'home',
+    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule),
+    canActivate: [IngresadoGuard]
+  },
+  {
     path: '',
     redirectTo: 'inicio',
     pathMatch: 'full'
@@ -35,7 +40,8 @@ const routes: Routes = [
   {
     path: 'entradas-detalle',
     loadChildren: () => import('./entradas-detalle/entradas-detalle.module').then( m => m.EntradasDetallePageModule)
-  },  {
+  },
+  {
     path: 'home2',
     loadChildren: () => import('./home2/home2.module').then( m => m.Home2PageModule)
   },
@@ -50,7 +56,12 @@ const routes: Routes = [
   {
     path: 'perfil',
     loadChildren: () => import('./perfil/perfil.module').then( m => m.PerfilPageModule)
-  }
+  },
+  {
+    path: '**',
+    redirectTo: 'notfound',
+    pathMatch: 'full'
+  },
 
 ];
 
