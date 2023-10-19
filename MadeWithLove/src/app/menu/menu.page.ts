@@ -12,15 +12,35 @@ export class MenuPage implements OnInit {
 
   paginas = [
     {
-      titulo: 'Home',
-      url: '/menu/home',
+      titulo:'Home',
+      url: '/menu/home2',
       icono: 'home'
+    },
+    {
+      titulo:'Mi perfil',
+      url: '/menu/perfil',
+      icono: 'person'
+    },
+    {
+      titulo: 'Publicar receta',
+      url: '/menu/home',
+      icono: 'add-circle'
     },
     {
       titulo: 'Entradas',
       url: '/menu/entradas',
       icono: 'book'
-    }
+    },
+    {
+      titulo:'Recetas favoritas',
+      url: '/menu/favoritos',
+      icono: 'heart'
+    },
+    {
+      titulo:'Explorar',
+      url: '/menu/explorar',
+      icono: 'search'
+    },
   ];
 
   constructor(public alertController: AlertController, public navCtrl: NavController) { }
