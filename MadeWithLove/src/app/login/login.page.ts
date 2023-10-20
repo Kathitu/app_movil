@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { AlertController, NavController } from '@ionic/angular';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
@@ -15,9 +16,9 @@ export class LoginPage implements OnInit {
     public navCtrl: NavController) { 
     this.formularioLogin = this.fb.group({
       'nombre': new FormControl("", Validators.required),
+      'email': new FormControl("", [Validators.required, Validators.email]), // Agregar validación de email
       'password': new FormControl("", Validators.required)
     })
-  
   }
 
   ngOnInit() {
@@ -32,7 +33,7 @@ export class LoginPage implements OnInit {
     if (usuarioString) { // Comprobar si usuarioString no es nulo
       var usuario = JSON.parse(usuarioString);
   
-      if (usuario.nombre == f.nombre && usuario.password == f.password) {
+      if (usuario.nombre == f.nombre && usuario.email == f.email && usuario.password == f.password) {
         console.log('Ingresado');
         localStorage.setItem('ingresado', 'true');
         this.navCtrl.navigateRoot('menu/home');
@@ -44,7 +45,8 @@ export class LoginPage implements OnInit {
         });
   
         await alert.present();
+      }
     }
   }
 }
-}
+

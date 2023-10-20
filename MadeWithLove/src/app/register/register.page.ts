@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { AlertController, NavController } from '@ionic/angular';
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.page.html',
@@ -15,13 +16,15 @@ export class RegisterPage implements OnInit {
     public navCtrl: NavController) {
     this.formularioRegistro = this.fb.group({
       'nombre': new FormControl("", Validators.required),
+      'email': new FormControl("", [Validators.required, Validators.email]),
       'password': new FormControl("", Validators.required),
       'confirmacionPassword': new FormControl("", Validators.required)
     });
-   }
+  }
 
   ngOnInit() {
   }
+
   async guardar(){
     var f = this.formularioRegistro.value;
 
@@ -38,6 +41,7 @@ export class RegisterPage implements OnInit {
 
     var usuario = {
       nombre: f.nombre,
+      email: f.email,
       password: f.password
     }
 
@@ -47,3 +51,6 @@ export class RegisterPage implements OnInit {
     this.navCtrl.navigateRoot('menu/home');
   }
 }
+
+
+
