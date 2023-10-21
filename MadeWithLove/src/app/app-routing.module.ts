@@ -25,12 +25,12 @@ const routes: Routes = [
   },
   {
     path: 'menu',
-    loadChildren: () => import('./menu/menu.module').then( m => m.MenuPageModule),
-    canActivate: [IngresadoGuard]
+    loadChildren: () => import('./menu/menu.module').then( m => m.MenuPageModule)
   },
   {
     path: 'home2',
-    loadChildren: () => import('./home2/home2.module').then( m => m.Home2PageModule)
+    loadChildren: () => import('./home2/home2.module').then( m => m.Home2PageModule),
+    canActivate: [IngresadoGuard]
   },
   {
     path: 'perfil',
