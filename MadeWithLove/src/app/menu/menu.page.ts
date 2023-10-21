@@ -27,7 +27,7 @@ export class MenuPage implements OnInit {
       icono: 'add-circle'
     },
     {
-      titulo: 'Entradas',
+      titulo: 'Mis recetas',
       url: '/menu/entradas',
       icono: 'book'
     },
