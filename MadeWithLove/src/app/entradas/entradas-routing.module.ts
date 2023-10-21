@@ -7,7 +7,11 @@ const routes: Routes = [
   {
     path: '',
     component: EntradasPage
-  }
+  },
+  {//ruta nieta
+    path: 'entradas-detalle',
+    loadChildren: () => import('../entradas-detalle/entradas-detalle.module').then( m => m.EntradasDetallePageModule)
+  },
 ];
 
 @NgModule({
