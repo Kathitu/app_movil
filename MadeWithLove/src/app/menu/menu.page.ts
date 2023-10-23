@@ -50,7 +50,7 @@ export class MenuPage implements OnInit {
   async salir(){
     const alert = await this.alertController.create({
       header: 'Salir',
-      message: '¿De verdad te quieres salir?',
+      message: '¿De verdad quieres salir?',
       buttons:[
         {
           text: 'No, mejor no',
