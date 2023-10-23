@@ -13,10 +13,6 @@ const routes: Routes = [
       loadChildren: () => import('../home2/home2.module').then( m => m.Home2PageModule)
     },
     {
-      path: 'perfil',
-      loadChildren: () => import('../perfil/perfil.module').then( m => m.PerfilPageModule)
-    },
-    {
       path: 'home',
       loadChildren: () => import('../home/home.module').then( m => m.HomePageModule)
     },  

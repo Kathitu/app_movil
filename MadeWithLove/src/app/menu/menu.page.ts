@@ -17,19 +17,14 @@ export class MenuPage implements OnInit {
       icono: 'home'
     },
     {
-      titulo:'Mi perfil',
-      url: '/menu/perfil',
-      icono: 'person'
-    },
-    {
       titulo: 'Publicar receta',
       url: '/menu/home',
       icono: 'add-circle'
     },
     {
-      titulo: 'Mis recetas',
+      titulo: 'Mi perfil',
       url: '/menu/entradas',
-      icono: 'book'
+      icono: 'person'
     },
     {
       titulo:'Recetas favoritas',
@@ -55,7 +50,7 @@ export class MenuPage implements OnInit {
   async salir(){
     const alert = await this.alertController.create({
       header: 'Salir',
-      message: '¿De verdad quieres salir?',
+      message: '¿De verdad te quieres salir?',
       buttons:[
         {
           text: 'No, mejor no',
