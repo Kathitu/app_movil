@@ -4,9 +4,47 @@
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>Mi perfil</ion-title>
+    <ion-icon name="notifications-outline" slot="end"></ion-icon>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content>
+  <ion-card>
+    <ion-card-content>
+      <div class="perfil-info">
 
+        <div class="perfil-image">
+          <img src="https://veteasy-api.s3-eu-west-1.amazonaws.com/media/blog_posts/961/main_image.jpg" alt="Imagen de perfil">
+        </div>
+      
+        <div class="perfil-detalles">
+          <!-- Textos: Publicaciones, Seguidores, Seguidos -->
+          <div class="perfil-stats">
+        
+              <span class="publicaciones-number">10</span>
+              <p>Publicaciones</p>
+
+              <span class="seguidores-number">10</span>
+              <p>Seguidores</p>
+
+              <span class="seguidos-number">10</span>
+              <p>Seguidos</p>
+          
+          </div>
+          <!-- Nombre y Usuario -->
+          <span class="name">Nombre</span>
+          <span class="username">@usuario_nickname</span>
+          <!-- Descripción -->
+          <p class="descripcion">Descripción</p>
+        </div>
+      </div>
+          <!-- Botón de Editar Perfil -->
+          <ion-button expand="block">
+            <ion-icon name="pencil-outline" slot="end"></ion-icon>
+            Ediar perfil
+          </ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Resto del contenido de la página, si es necesario -->
 </ion-content>
