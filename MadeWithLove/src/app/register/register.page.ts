@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { AlertController, NavController } from '@ionic/angular';
+import { AlliService } from '../alli.service';
+
 
 @Component({
   selector: 'app-register',
@@ -10,10 +12,12 @@ import { AlertController, NavController } from '@ionic/angular';
 export class RegisterPage implements OnInit {
  
   formularioRegistro: FormGroup;
+  nombreUsuario: string = ''; // Variable para almacenar el nombre de usuario
 
   constructor(public fb: FormBuilder, 
     public alertController: AlertController,
-    public navCtrl: NavController) {
+    public navCtrl: NavController,
+    public alliService: AlliService) {
     this.formularioRegistro = this.fb.group({
       'nombre': new FormControl("", Validators.required),
       'email': new FormControl("", [Validators.required, Validators.email]),
@@ -38,6 +42,7 @@ export class RegisterPage implements OnInit {
       await alert.present();
       return;
     }
+    this.alliService.setNombreUsuario(f.nombre);
 
     var usuario = {
       nombre: f.nombre,

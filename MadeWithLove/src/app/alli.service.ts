@@ -7,16 +7,13 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AlliService {
-  httpOptions = {
-    headers: new HttpHeaders({
-      'Content-Type': 'application/json',
-      'Access-Control-Allow-Origin': '*'
-    })
-  };
+  private nombreUsuario: string = '';
 
-  // Se establece la base url del API a consumir
-  apiURL = 'https://jsonplaceholder.typicode.com';
+  setNombreUsuario(nombre: string) {
+    this.nombreUsuario = nombre;
+  }
 
-  // Se declara la variable http de tipo HttpClient
-  constructor(private http: HttpClient) { }
+  getNombreUsuario(): string {
+    return this.nombreUsuario;
+  }
 }

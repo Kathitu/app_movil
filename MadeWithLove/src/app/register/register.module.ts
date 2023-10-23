@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { RegisterPageRoutingModule } from './register-routing.module';
 
 import { RegisterPage } from './register.page';
+import { AlliService } from '../alli.service';
 
 @NgModule({
   imports: [
@@ -16,6 +17,7 @@ import { RegisterPage } from './register.page';
     RegisterPageRoutingModule,
     ReactiveFormsModule
   ],
-  declarations: [RegisterPage]
+  declarations: [RegisterPage],
+  providers: [AlliService]
 })
 export class RegisterPageModule {}
