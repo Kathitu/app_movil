@@ -10,6 +10,7 @@ import { AlliService } from '../alli.service';
 })
 export class EntradasPage implements OnInit {
   nombreUsuario: string = '';
+  publicacionesCount: number = 0;
 
   entradas: Array<{
     fecha: string,
@@ -28,6 +29,7 @@ export class EntradasPage implements OnInit {
 
   cargarEntradas(){
     this.entradas = JSON.parse(localStorage.getItem('entradas') || '[]');
+    this.publicacionesCount = this.entradas.length;
     if(!this.entradas)return;
     this.entradas.sort((item1, item2) => {
       if (item1.fecha < item2.fecha) return 1;
