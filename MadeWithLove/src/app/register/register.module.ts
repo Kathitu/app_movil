@@ -17,7 +17,6 @@ import { AlliService } from '../alli.service';
     RegisterPageRoutingModule,
     ReactiveFormsModule
   ],
-  declarations: [RegisterPage],
-  providers: [AlliService]
+  declarations: [RegisterPage]
 })
 export class RegisterPageModule {}

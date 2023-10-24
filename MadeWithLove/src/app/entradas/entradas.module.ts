@@ -16,7 +16,6 @@ import { AlliService } from '../alli.service';
     IonicModule,
     EntradasPageRoutingModule
   ],
-  declarations: [EntradasPage],
-  providers: [AlliService]
+  declarations: [EntradasPage]
 })
 export class EntradasPageModule {}
