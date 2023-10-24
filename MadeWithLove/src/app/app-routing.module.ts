@@ -25,7 +25,8 @@ const routes: Routes = [
   },
   {
     path: 'menu',
-    loadChildren: () => import('./menu/menu.module').then( m => m.MenuPageModule)
+    loadChildren: () => import('./menu/menu.module').then( m => m.MenuPageModule),
+    canActivate: [IngresadoGuard]
   },
   {
     path: 'home2',
@@ -34,23 +35,28 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule),
+    canActivate: [IngresadoGuard]
   },
   {
     path: 'entradas',
-    loadChildren: () => import('./entradas/entradas.module').then( m => m.EntradasPageModule)
+    loadChildren: () => import('./entradas/entradas.module').then( m => m.EntradasPageModule),
+    canActivate: [IngresadoGuard]
   },
   {
     path: 'entradas-detalle',
-    loadChildren: () => import('./entradas-detalle/entradas-detalle.module').then( m => m.EntradasDetallePageModule)
+    loadChildren: () => import('./entradas-detalle/entradas-detalle.module').then( m => m.EntradasDetallePageModule),
+    canActivate: [IngresadoGuard]
   },
   {
     path: 'favoritos',
-    loadChildren: () => import('./favoritos/favoritos.module').then( m => m.FavoritosPageModule)
+    loadChildren: () => import('./favoritos/favoritos.module').then( m => m.FavoritosPageModule),
+    canActivate: [IngresadoGuard]
   },
   {
     path: 'explorar',
-    loadChildren: () => import('./explorar/explorar.module').then( m => m.ExplorarPageModule)
+    loadChildren: () => import('./explorar/explorar.module').then( m => m.ExplorarPageModule),
+    canActivate: [IngresadoGuard]
   },
   {
     path: 'notfound',
