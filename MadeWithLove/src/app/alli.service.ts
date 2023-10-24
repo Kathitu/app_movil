@@ -9,6 +9,10 @@ import { SQLite, SQLiteObject } from '@awesome-cordova-plugins/sqlite/ngx';
 })
 export class AlliService {
 
+  constructor(public http: HttpClient){
+    console.log("Hola AlliService")
+  }
+
   private db!: SQLiteObject;
   private isOpen!: boolean;
 
@@ -20,5 +24,9 @@ export class AlliService {
 
   getNombreUsuario(): string {
     return this.nombreUsuario;
+  }
+
+  obtenerDatos(){
+    return this.http.get("https://nancyb3a.github.io/Test_/usuarios_PGY4121_04.json")
   }
 }
