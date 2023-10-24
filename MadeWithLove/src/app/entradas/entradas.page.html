@@ -41,7 +41,7 @@
           <!-- Botón de Editar Perfil -->
           <ion-button expand="block">
             <ion-icon name="pencil-outline" slot="end"></ion-icon>
-            Ediar perfil
+            Editar perfil
           </ion-button>
     </ion-card-content>
   </ion-card>
@@ -54,5 +54,11 @@
       </ion-label>
     </ion-item>
   </ion-list>
+  
+    <ion-fab [routerLink]="['/menu/home']" slot="fixed" vertical="bottom" horizontal="end">
+      <ion-fab-button>
+        <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
   
 </ion-content>

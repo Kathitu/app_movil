@@ -17,11 +17,6 @@ export class MenuPage implements OnInit {
       icono: 'home'
     },
     {
-      titulo: 'Publicar receta',
-      url: '/menu/home',
-      icono: 'add-circle'
-    },
-    {
       titulo: 'Mi perfil',
       url: '/menu/entradas',
       icono: 'person'
