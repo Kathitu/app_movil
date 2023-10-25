@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Vibration} from '@awesome-cordova-plugins/vibration/ngx'
 
 @Component({
   selector: 'app-card-feed',
@@ -7,8 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardFeedComponent  implements OnInit {
 
-  constructor() { }
+  constructor(private vibration: Vibration) { }
 
   ngOnInit() {}
+
+  vibrar() {
+    this.vibration.vibrate(200);
+  }
 
 }

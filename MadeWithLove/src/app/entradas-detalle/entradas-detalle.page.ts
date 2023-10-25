@@ -20,13 +20,12 @@ export class EntradasDetallePage implements OnInit {
   constructor(private router: Router) {
     const extras = this.router.getCurrentNavigation()?.extras.state;
     if (extras && 'entrada' in extras) {
-      this.entrada = extras['entrada']; // Acceso usando notación de índice
+      this.entrada = extras['entrada'];
     }
   }
 
   ngOnInit() {}
 }
-
 
 
 
