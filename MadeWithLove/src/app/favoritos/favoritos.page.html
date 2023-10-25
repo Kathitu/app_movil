@@ -6,11 +6,17 @@
     <ion-avatar slot="end">
       <ion-img [routerLink]="['/menu/entradas']" src="https://veteasy-api.s3-eu-west-1.amazonaws.com/media/blog_posts/961/main_image.jpg"></ion-img>
     </ion-avatar>
-    <ion-title>Publicar receta</ion-title>
+    <ion-title>Recetas favoritas</ion-title>
     <ion-icon name="notifications-outline" slot="end"></ion-icon>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <app-card-entrada [entrada]="entradaActual" (eventoGuardar)="guardar($event)"></app-card-entrada>
+
+  <ion-fab [routerLink]="['/menu/home']" slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
 </ion-content>

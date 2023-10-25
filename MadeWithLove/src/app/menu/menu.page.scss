@@ -128,3 +128,13 @@ ion-menu ion-content {
     position: relative;
     overflow: hidden;
 }
+
+ion-menu::part(backdrop) {
+  background-color: #ff1990;
+}
+
+ion-menu::part(container) {
+  border-radius: 0 20px 20px 0;
+
+  box-shadow: 4px 0px 16px #ff0084;
+}

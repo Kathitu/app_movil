@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
 import { NavController } from '@ionic/angular';
+import { AlliService } from '../alli.service';
 
 @Component({
   selector: 'app-entradas',
@@ -8,6 +9,8 @@ import { NavController } from '@ionic/angular';
   styleUrls: ['./entradas.page.scss'],
 })
 export class EntradasPage implements OnInit {
+  nombreUsuario: string = '';
+  publicacionesCount: number = 0;
 
   entradas: Array<{
     fecha: string,
@@ -15,15 +18,18 @@ export class EntradasPage implements OnInit {
     texto: string
   }> = [];
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private alliService: AlliService) {
     this.cargarEntradas();
   }
 
   ngOnInit() {
+    console.log("ngOnInit is running");
+    this.nombreUsuario = this.alliService.getNombreUsuario();
   }
 
   cargarEntradas(){
     this.entradas = JSON.parse(localStorage.getItem('entradas') || '[]');
+    this.publicacionesCount = this.entradas.length;
     if(!this.entradas)return;
     this.entradas.sort((item1, item2) => {
       if (item1.fecha < item2.fecha) return 1;

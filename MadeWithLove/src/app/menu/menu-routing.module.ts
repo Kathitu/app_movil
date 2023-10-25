@@ -7,14 +7,27 @@ const routes: Routes = [
   {
     path: '',
     component: MenuPage,
-    children: [{ 
-      path: 'entradas',
-      loadChildren: () => import('../entradas/entradas.module').then( m => m.EntradasPageModule)
+    children: [ //Rutas hijas
+    {
+      path: 'home2',
+      loadChildren: () => import('../home2/home2.module').then( m => m.Home2PageModule)
     },
     {
       path: 'home',
       loadChildren: () => import('../home/home.module').then( m => m.HomePageModule)
-    },]
+    },  
+    {
+      path: 'entradas',
+      loadChildren: () => import('../entradas/entradas.module').then( m => m.EntradasPageModule)
+    },
+    {
+      path: 'favoritos',
+      loadChildren: () => import('../favoritos/favoritos.module').then( m => m.FavoritosPageModule)
+    },
+    {
+      path: 'explorar',
+      loadChildren: () => import('../explorar/explorar.module').then( m => m.ExplorarPageModule)
+    }]
   }
 ];
 

@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class IngresadoGuard implements CanActivate {
+export class IngresadoGuard implements CanActivate { //RoutingModule
 
   constructor(public navCtrl: NavController){
     

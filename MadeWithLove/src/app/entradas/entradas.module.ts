@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { EntradasPageRoutingModule } from './entradas-routing.module';
 
 import { EntradasPage } from './entradas.page';
+import { AlliService } from '../alli.service';
 
 @NgModule({
   imports: [
@@ -15,6 +16,7 @@ import { EntradasPage } from './entradas.page';
     IonicModule,
     EntradasPageRoutingModule
   ],
-  declarations: [EntradasPage]
+  declarations: [EntradasPage],
+  providers: [AlliService]
 })
 export class EntradasPageModule {}

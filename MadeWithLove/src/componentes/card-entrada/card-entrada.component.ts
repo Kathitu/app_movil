@@ -1,4 +1,5 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import {Vibration} from '@awesome-cordova-plugins/vibration/ngx'
 
 @Component({
   selector: 'app-card-entrada',
@@ -22,9 +23,13 @@ export class CardEntradaComponent implements OnInit {
     texto: string;
   }>();
 
-  constructor() {}
+  constructor(private vibration: Vibration) {}
 
   ngOnInit() {}
+
+  vibrar() {
+    this.vibration.vibrate(200);
+  }
 
   guardar() {
     this.eventoGuardar.emit(this.entrada);
